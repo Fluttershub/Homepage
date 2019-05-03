@@ -1,0 +1,41 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    meta(name='Description', content='Flutters Personal Website')
+    link(rel='stylesheet', type='text/css', href='scss/index.scss')
+    include links.pug
+    include ogp.pug
+
+    title Fluttershub.com
+  body
+    .container
+      .pod
+        .glow
+          img#profile_pic(src='https://storage.googleapis.com/api.fluttershub.com/images/public/profile_pic.png', alt='')
+        h1.welcome_text.text-flicker.text-flicker-1 MrFlutters
+        p.about_me.standard_text.text-box-glow
+        .pod
+          a.standard_text.text-flicker-2(href="https://steamcommunity.com/id/MrFlutters") Steam
+          a.standard_text.text-flicker-2(href="https://twitter.com/mrflutters") Twitter
+          a.standard_text.text-flicker-2(href="https://github.com/MrFlutters") Github
+          //- a.standard_text.text-flicker-2(href="https://github.com/MrFlutters/Fluttershub.com") Discord
+        footer.standard_text.footer-slide
+          .creator
+            a.build_text(href="https://img.fluttershub.com/EgOwhwrHyHWw.png") Cookie? 🍪
+              //- a.no_highlight(href="https://github.com/MrFlutters/Fluttershub.com") MrFlutters
+          //- .build
+          //-   span.build_text Version
+          //-   span.build_text v#{process.env.VERSION} |
+          //-   span.build_text
+          //-     | Commit: 
+          //-     a.no_highlight.build_text(href="https://github.com/MrFlutters/Fluttershub.com/commit/" + process.env.COMMIT) #{process.env.COMMIT}
+          //- .note
+          //-   span.build_text 
+          //-     | built with 📦
+          //-     a(href="https://parceljs.org/") Parceljs,
+          //-   a.build_text(href="https://github.com/pugjs/pug") Pug
+          //-   span.build_text and
+          //-   span.cookiesncoco.build_text 🍪☕

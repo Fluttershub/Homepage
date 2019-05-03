@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Average+Sans|Contrail+One');
+
+$background_color: #1a1e23;
+$Primany-font: 'Contrail One';
+$Secondary-font: 'Average Sans';
+
+body,html, .container {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: $background_color;
+    user-select: none;
+    -moz-user-select: none;
+    overflow:hidden;  
+}
+.welcome_text {
+    color:white;
+    font-family: $Primany-font;
+    user-select: text;
+    -moz-user-select: text;
+}
+.standard_text{
+    color:white;
+    font-family: $Secondary-font;
+    user-select: text;
+    -moz-user-select: text;
+}
+
+// #CSS GRID
+.container {
+    position: relative;
+    text-align: center;
+}
+.container::before {
+    content: "";
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: inline-block;
+    width: 0; height: 100%;
+    vertical-align: middle;
+}
+.pod {
+    display:grid;
+    // display: inline-grid;
+    // justify-content: center;
+    display: inline-block;
+    vertical-align: middle;
+}
+.pod a {
+    margin: 2px;
+    font-size: 120%
+}
+.build_text {
+    margin: 0.2rem;
+    color: white;
+    font-family: $Secondary-font;
+    user-select: text;
+    -moz-user-select: text;
+    text-decoration: none;
+}
+
+.no_hightnight a:link, a{
+    color: inherit;
+    // text-decoration: none;
+    text-decoration: underline;
+}
+
+.cookiesncoco {
+    font-size: 1.0rem;
+}
+.name-letters {
+    padding: 0
+}

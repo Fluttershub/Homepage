@@ -1,0 +1,32 @@
+{
+  "name": "fluttershub-com",
+  "version": "4.0.0",
+  "private": true,
+  "description": "Small description for fluttershub-com goes here",
+  "license": "MIT",
+  "author": "MrFlutters",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrFlutters/Fluttershub.com.git"
+  },
+  "scripts": {
+    "Dev": "npm run Cleanup && npm run Init && parcel dev src/index.pug -d build",
+    "Cleanup": "rm -Rf build/ .cache/",
+    "Init": "mkdir build && cp -R src/assets/* build/",
+    "Prod": "npm run Cleanup && npm run Init && parcel build src/index.pug -d build"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3",
+    "pug": "^2.0.3",
+    "sass": "^1.19.0"
+  },
+  "engines": {
+    "node": "11.*"
+  },
+  "dependencies": {},
+  "main": "index.js",
+  "bugs": {
+    "url": "https://github.com/MrFlutters/Fluttershub.com/issues"
+  },
+  "homepage": "https://github.com/MrFlutters/Fluttershub.com#readme"
+}

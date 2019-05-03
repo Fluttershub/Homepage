@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  home:
+    image: mrflutters/home:1.0.0
+    restart: always
+    networks:
+      - web
+    container_name: Fluttershub_home
+networks:
+  web:
+    external: true

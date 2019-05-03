@@ -1,0 +1,13 @@
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0.4rem;
+    // background-color: #efefef;
+    text-align: center;
+    background-color: #111417;
+    -webkit-animation: footer-slide 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: footer-slide 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation-delay: 2.0s;
+ }

@@ -2,11 +2,11 @@ version: "3"
 
 services:
   home:
-    image: mrflutters/home:1.0.0
+    image: registry.gitlab.com/mrflutters/flutters-website-dockertesting:dev
     restart: always
     networks:
-      - web
+      - external
     container_name: Fluttershub_home
 networks:
-  web:
+  external:
     external: true

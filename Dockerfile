@@ -17,7 +17,7 @@ COPY docker/nginx.conf /etc/nginx/nginx.conf
 COPY docker/web.conf /etc/nginx/conf.d/web.conf
 
 LABEL traefik.backend=fluttershub_home
-LABEL traefik.frontend.rule="Host:fluttershub.com"
+LABEL traefik.frontend.rule="Host:${CI_COMMIT_REF_SLUG}fluttershub.com"
 LABEL traefik.docker.network=web
 LABEL traefik.frontend.redirect.entryPoint=https
 LABEL traefik.enable=true

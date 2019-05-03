@@ -7,7 +7,7 @@ COPY ["package.json", "./"]
 COPY ["package-lock.json", "./"]
 
 FROM base AS builder
-RUN npm set progress=false && npm config set depth 0 && npm install
+RUN npm set progress=false && npm config set depth 0 && npm ci
 COPY ["src/", "./src"]
 RUN npm run Prod
 

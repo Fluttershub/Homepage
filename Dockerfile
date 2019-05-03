@@ -7,13 +7,8 @@ COPY ["package.json", "./"]
 COPY ["package-lock.json", "./"]
 
 FROM base AS builder
-# ENV PARCEL_WORKERS=2
 RUN npm set progress=false && npm config set depth 0 && npm install
 COPY ["src/", "./src"]
-# ARG VERSION=Missing
-# ENV VERSION=$VERSION
-# ARG COMMIT=Missing
-# ENV COMMIT=$COMMIT
 RUN npm run Prod
 
 FROM nginx:1.14.1-alpine as Web

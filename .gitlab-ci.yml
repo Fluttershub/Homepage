@@ -18,10 +18,19 @@ build-master:
   only:
     - master
 
+build-dev:
+  stage: build
+  script:
+    - docker build --pull -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG" . --label traefik.frontend.rule="Host:www.dev.${DOMAIN}"
+    - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG"
+  only:
+    - dev
+
 build:
   stage: build
   script:
-    - docker build --pull -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG" . --label traefik.frontend.rule="Host:${CI_COMMIT_REF_SLUG}.${DOMAIN}"
+    - docker build --pull -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG" . --label traefik.frontend.rule="Host:${CI_COMMIT_REF_SLUG}.dev.${DOMAIN}"
     - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG"
   except:
     - master
+    - dev

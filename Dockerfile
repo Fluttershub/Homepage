@@ -9,7 +9,6 @@ COPY ["package-lock.json", "./"]
 FROM base AS builder
 RUN npm set progress=false && npm config set depth 0 && npm ci
 COPY ["src/", "./src"]
-ENV PARCEL_WORKERS=1
 RUN npm run Prod
 
 FROM nginx:1.16.0-alpine as Web

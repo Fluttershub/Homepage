@@ -13,7 +13,7 @@ before_script:
 build-master:
   stage: build
   script:
-    - docker build --pull -t "$CI_REGISTRY_IMAGE" . --label traefik.frontend.rule="Host:${DOMAIN}" --label "traefik.backend=${$CI_COMMIT_SHORT_SHA}-${CI_COMMIT_REF_SLUG}-${DOMAIN}"
+    - docker build --pull -t "$CI_REGISTRY_IMAGE" . --label traefik.frontend.rule="Host:${DOMAIN}" --label "traefik.backend=${CI_COMMIT_SHORT_SHA}-${CI_COMMIT_REF_SLUG}-${DOMAIN}"
     - docker push "$CI_REGISTRY_IMAGE"
   only:
     - master
@@ -21,7 +21,7 @@ build-master:
 build-dev:
   stage: build
   script:
-    - docker build --pull -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG" . --label traefik.frontend.rule="Host:www.dev.${DOMAIN}" --label "traefik.backend=${$CI_COMMIT_SHORT_SHA}-${CI_COMMIT_REF_SLUG}-${DOMAIN}"
+    - docker build --pull -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG" . --label traefik.frontend.rule="Host:www.dev.${DOMAIN}" --label "traefik.backend=${CI_COMMIT_SHORT_SHA}-${CI_COMMIT_REF_SLUG}-${DOMAIN}"
     - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG"
   only:
     - dev
@@ -29,7 +29,7 @@ build-dev:
 build:
   stage: build
   script:
-    - docker build --pull -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG" . --label traefik.frontend.rule="Host:${CI_COMMIT_REF_SLUG}.dev.${DOMAIN}" --label "traefik.backend=${$CI_COMMIT_SHORT_SHA}-${CI_COMMIT_REF_SLUG}-${DOMAIN}"
+    - docker build --pull -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG" . --label traefik.frontend.rule="Host:${CI_COMMIT_REF_SLUG}.dev.${DOMAIN}" --label "traefik.backend=${CI_COMMIT_SHORT_SHA}-${CI_COMMIT_REF_SLUG}-${DOMAIN}"
     - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG"
   except:
     - master

@@ -9,17 +9,17 @@ COPY ["package-lock.json", "./"]
 FROM base AS builder
 RUN npm set progress=false && npm config set depth 0 && npm ci
 COPY ["src/", "./src"]
+ENV PARCEL_WORKERS=1
 RUN npm run Prod
 
-FROM nginx:1.14.1-alpine as Web
+FROM nginx:1.16.0-alpine as Web
 LABEL maintainer="MrFlutters (https://github.com/MrFlutters)"
 COPY docker/nginx.conf /etc/nginx/nginx.conf
 COPY docker/web.conf /etc/nginx/conf.d/web.conf
 
-LABEL traefik.backend=fluttershub_home
-LABEL traefik.frontend.rule="Host:${CI_COMMIT_REF_SLUG}fluttershub.com"
+LABEL traefik.backend=fluttershub.com
+LABEL com.centurylinklabs.watchtower.enable="true"
 LABEL traefik.docker.network=web
-LABEL traefik.frontend.redirect.entryPoint=https
 LABEL traefik.enable=true
 LABEL traefik.port=80
 

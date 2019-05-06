@@ -17,7 +17,6 @@ LABEL maintainer="MrFlutters (https://github.com/MrFlutters)"
 COPY docker/nginx.conf /etc/nginx/nginx.conf
 COPY docker/web.conf /etc/nginx/conf.d/web.conf
 
-LABEL traefik.backend=fluttershub.com
 LABEL com.centurylinklabs.watchtower.enable="true"
 LABEL traefik.docker.network=web
 LABEL traefik.enable=true

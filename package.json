@@ -1,13 +1,13 @@
 {
   "name": "fluttershub-com",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "private": true,
-  "description": "Small description for fluttershub-com goes here",
+  "description": "My personal website for fluttershub.com",
   "license": "MIT",
   "author": "MrFlutters",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MrFlutters/Fluttershub.com.git"
+    "url": "git@gitlab.com:MrFlutters/Fluttershub.git"
   },
   "scripts": {
     "Dev": "npm run Cleanup && npm run Init && parcel dev src/index.pug -d build",
@@ -26,7 +26,7 @@
   "dependencies": {},
   "main": "index.js",
   "bugs": {
-    "url": "https://github.com/MrFlutters/Fluttershub.com/issues"
+    "url": "https://gitlab.com/MrFlutters/Fluttershub/issues"
   },
-  "homepage": "https://github.com/MrFlutters/Fluttershub.com#readme"
+  "homepage": "https://fluttershub.com"
 }

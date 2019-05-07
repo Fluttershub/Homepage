@@ -1,3 +1,4 @@
 .gitlab-ci.yml
+LICENSE
 docker-compose.yml
 Dockerfile

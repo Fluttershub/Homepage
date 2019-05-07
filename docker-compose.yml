@@ -4,11 +4,15 @@ services:
   fluttershub.com:
     image: registry.gitlab.com/mrflutters/fluttershub:latest
     restart: always
+    networks:
+      - external
     container_name: fluttershub.com
-  dev.fluttershub.com:
+  www.dev.fluttershub.com:
     image: registry.gitlab.com/mrflutters/fluttershub:dev
     restart: always
-    container_name: dev.fluttershub.com
+    networks:
+      - external
+    container_name: www.dev.fluttershub.com
 networks:
   external:
     external: true

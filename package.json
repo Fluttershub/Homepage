@@ -16,9 +16,9 @@
     "Prod": "npm run Cleanup && npm run Init && parcel build src/index.pug -d build"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.3",
-    "pug": "^2.0.3",
-    "sass": "^1.20.1"
+    "parcel-bundler": "^1.12.4",
+    "pug": "^2.0.4",
+    "sass": "^1.26.11"
   },
   "engines": {
     "node": "11.*"

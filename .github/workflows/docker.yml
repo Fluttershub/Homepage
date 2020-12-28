@@ -1,0 +1,34 @@
+name: Docker Build
+
+on:
+  push:
+    branches:
+      - main
+env:
+  IMAGE_REPO: ghcr.io/hotarublaze
+  IMAGE_NAME: fluttershub
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    # If running with act, Uncomment below
+    # container: phaze9/action-runner
+    env:
+      DOCKER_CONFIG: $HOME/.docker
+    steps:
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Login to ghcr.io
+        uses: docker/login-action@v1 
+        with:
+          registry: ghcr.io
+          username: HotaruBlaze
+          password: ${{ secrets.CR_PAT }}
+
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: ${{ env.IMAGE_REPO }}/${{ env.IMAGE_NAME }}:latest

@@ -4,12 +4,13 @@
   "private": true,
   "description": "My personal website for fluttershub.com",
   "license": "MIT",
-  "author": "MrFlutters",
+  "author": "HotaruBlaze",
   "repository": {
     "type": "git",
-    "url": "git@gitlab.com:MrFlutters/Fluttershub.git"
+    "url": "git@github.com:github/Fluttershub.git"
   },
   "scripts": {
+    "preinit": "npx npm-force-resolutions",
     "Dev": "npm run Cleanup && npm run Init && parcel dev src/index.pug -d build",
     "Cleanup": "rm -Rf build/ .cache/",
     "Init": "mkdir build && cp -R src/assets/* build/",
@@ -18,15 +19,18 @@
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
     "pug": "^2.0.4",
-    "sass": "^1.26.11"
+    "sass": "^1.30.0"
   },
   "engines": {
-    "node": "11.*"
+    "node": "14.*"
+  },
+  "resolutions": {
+    "node-forge": "0.10.0"
   },
   "dependencies": {},
   "main": "index.js",
   "bugs": {
-    "url": "https://gitlab.com/MrFlutters/Fluttershub/issues"
+    "url": "https://github.com/hotarublaze/Fluttershub/issues"
   },
   "homepage": "https://fluttershub.com"
 }

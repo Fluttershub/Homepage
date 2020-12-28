@@ -7,12 +7,8 @@ services:
     networks:
       - external
     container_name: fluttershub.com
-  # www.dev.fluttershub.com:
-  #   image: registry.gitlab.com/mrflutters/fluttershub:dev
-  #   restart: always
-  #   networks:
-  #     - external
-  #   container_name: www.dev.fluttershub.com
+    labels:
+      - "traefik.enable=true"
 networks:
   external:
     external: true

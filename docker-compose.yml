@@ -2,7 +2,7 @@ version: "3"
 
 services:
   fluttershub.com:
-    image: registry.gitlab.com/mrflutters/fluttershub:latest
+    image: ghcr.io/hotarublaze/fluttershub:latest
     restart: always
     networks:
       - external

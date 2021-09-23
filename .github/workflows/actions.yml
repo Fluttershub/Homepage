@@ -1,0 +1,56 @@
+name: Docker Build
+
+on:
+  push:
+    branches:
+      - main
+env:
+  IMAGE_REPO: ghcr.io/hotarublaze
+  IMAGE_NAME: fluttershub
+
+jobs:
+  BuildImage:
+    runs-on: ubuntu-latest
+    # If running with act, Uncomment below
+    # container: phaze9/action-runner
+    env:
+      DOCKER_CONFIG: $HOME/.docker
+    steps:
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Login to ghcr.io
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: HotaruBlaze
+          password: ${{ secrets.CR_PAT }}
+
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: ${{ env.IMAGE_REPO }}/${{ env.IMAGE_NAME }}:latest
+  Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Ansible playbook
+        # uses: dawidd6/action-ansible-playbook@v2.5.0
+        uses: dawidd6/action-ansible-playbook@671974ed60e946e11964cb0c26e69caaa4b1f559
+        with:
+          playbook: playbook.yml
+          directory: ./
+          key: ${{secrets.DEPLOY_SSH_KEY}}
+          inventory: |
+            [docker]
+            fluttershub.com
+            [docker:vars]
+            ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+            ansible_ssh_user=deploy
+          options: |
+            --verbose
+          # Set to "true" if root is required for running your playbook
+          # sudo: false # optional
+          # Set to "true" if the Ansible output should not include colors (defaults to "false")
+          # no_color: # optional

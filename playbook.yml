@@ -1,0 +1,29 @@
+---
+- hosts: docker
+  tasks:
+    - name: Ensures ~/docker/home dir exists
+      file: 
+        path: ~/docker/home 
+        state: directory
+        owner: deploy
+        group: deploy
+        mode: '0755'
+
+    - name: "Copy home Compose files"
+      copy:
+        src: ./{{ item }}
+        dest: "~/docker/home/{{ item }}"
+        owner: deploy
+        group: deploy
+        mode: '0755'
+      loop:
+        - docker-compose.yml
+      register: compose
+
+    - name: deploy Docker Compose stack if updated
+      community.docker.docker_compose:
+        project_src: "~/docker/home"
+        pull: true
+        files:
+          - docker-compose.yml
+      when: compose.changed

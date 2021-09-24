@@ -5,8 +5,8 @@ on:
     branches:
       - main
 env:
-  IMAGE_REPO: ghcr.io/hotarublaze
-  IMAGE_NAME: fluttershub
+  IMAGE_REPO: ghcr.io/fluttershub
+  IMAGE_NAME: homepage
 
 jobs:
   BuildImage:
@@ -25,7 +25,7 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
-          username: HotaruBlaze
+          username: fluttershub
           password: ${{ secrets.CR_PAT }}
 
       - name: Build and push

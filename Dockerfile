@@ -1,4 +1,4 @@
-FROM node:14.15.3-alpine AS base
+FROM node:14.15.3 AS base
 LABEL version="4.1.0"
 LABEL description=""
 

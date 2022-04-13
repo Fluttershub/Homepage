@@ -11,7 +11,7 @@ RUN npm set progress=false && npm config set depth 0 && npm run preinit && npm c
 COPY ["src/", "./src"]
 RUN npm run Prod
 
-FROM nginx:1.19.6-alpine as Web
+FROM nginx:1.21.6-alpine as Web
 LABEL maintainer="Phoenix (https://github.com/HotaruBlaze)"
 COPY docker/nginx.conf /etc/nginx/nginx.conf
 COPY docker/web.conf /etc/nginx/conf.d/web.conf

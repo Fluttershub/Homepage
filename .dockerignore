@@ -1,4 +1,6 @@
 .gitlab-ci.yml
+.parcel-cache/
+node_modules/
 LICENSE
 docker-compose.yml
 Dockerfile

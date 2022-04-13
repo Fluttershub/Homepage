@@ -4,10 +4,10 @@ LABEL description=""
 
 WORKDIR /usr/src/app
 COPY ["package.json", "./"]
-COPY ["package-lock.json", "./"]
+COPY ["yarn.lock", "./"]
 
 FROM base AS builder
-RUN npm set progress=false && npm config set depth 0 && npm run preinit && npm ci
+RUN yarn install
 COPY ["src/", "./src"]
 RUN npm run Prod
 

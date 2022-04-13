@@ -39,7 +39,7 @@ jobs:
         with:
           registry: ${{ env.IMAGE_REGISTRY }}
           username: ${{ env.IMAGE_OWNER }}
-          password: ${{ secrets.TOKEN }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push - x64
         id: docker_build_x64

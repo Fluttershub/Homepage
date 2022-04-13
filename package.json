@@ -20,7 +20,7 @@
     "@parcel/transformer-pug": "^2.4.1",
     "@parcel/transformer-sass": "2.4.1",
     "parcel": "^2.4.1",
-    "pug": "^2.0.4",
+    "pug": "^3.0.2",
     "sass": "^1.30.0"
   },
   "engines": {

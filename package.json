@@ -22,7 +22,7 @@
     "parcel": "^2.4.1"
   },
   "engines": {
-    "node": "17.*"
+    "node": "^18.*"
   },
   "resolutions": {
     "node-forge": "0.10.0"

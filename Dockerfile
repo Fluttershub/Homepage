@@ -7,7 +7,7 @@ COPY ["package.json", "./"]
 COPY ["yarn.lock", "./"]
 
 FROM base AS builder
-RUN apk add --no-cache --virtual .gyp python make g++ \
+RUN apk add --no-cache --virtual .gyp python3 make g++ \
     && yarn install \    
     && apk del .gyp
 

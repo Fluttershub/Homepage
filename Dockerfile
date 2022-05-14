@@ -1,4 +1,4 @@
-FROM node:18.0.0 AS base
+FROM node:18-alpine AS base
 LABEL version="4.1.0"
 LABEL description=""
 
@@ -7,7 +7,10 @@ COPY ["package.json", "./"]
 COPY ["yarn.lock", "./"]
 
 FROM base AS builder
-RUN yarn install
+RUN apk add --no-cache --virtual .gyp python3 make g++ \
+    && yarn install \    
+    && apk del .gyp
+
 COPY ["src/", "./src"]
 RUN npm run Prod
 

@@ -7,7 +7,10 @@ COPY ["package.json", "./"]
 COPY ["yarn.lock", "./"]
 
 FROM base AS builder
-RUN yarn install
+RUN apk add --no-cache --virtual .gyp python make g++ \
+    && yarn install \    
+    && apk del .gyp
+
 COPY ["src/", "./src"]
 RUN npm run Prod
 

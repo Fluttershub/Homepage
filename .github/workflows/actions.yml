@@ -28,8 +28,8 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ${{ env.IMAGE_REGISTRY }}
-          username: ${{ env.IMAGE_OWNER }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: ${{ env.TOKEN_USER }}
+          password: ${{ secrets.TOKEN }}
 
       - name: Build Docker Image
         id: docker_build_x64
@@ -57,8 +57,8 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ${{ env.IMAGE_REGISTRY }}
-          username: ${{ env.IMAGE_OWNER }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: ${{ env.TOKEN_USER }}
+          password: ${{ secrets.TOKEN }}
 
       - name: Build Docker Image
         id: docker_build_arm64

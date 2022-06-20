@@ -17,7 +17,7 @@
     "Prod": "npm run Cleanup && npm run Init && parcel build src/index.pug --dist-dir build"
   },
   "devDependencies": {
-    "parcel": "^2.6.0"
+    "parcel": "^2.6.1"
   },
   "engines": {
     "node": "^18.*"

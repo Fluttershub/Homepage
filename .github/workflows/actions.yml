@@ -72,7 +72,7 @@ jobs:
 
   Deploy:
     runs-on: ubuntu-latest
-    needs: Build_ARM64
+    needs: Build_x86
     steps:
       - uses: actions/checkout@v2
       - name: Run Ansible playbook

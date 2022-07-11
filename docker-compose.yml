@@ -2,7 +2,7 @@ version: "3"
 
 services:
   fluttershub.com:
-    image: ghcr.io/fluttershub/homepage:arm64-latest
+    image: ghcr.io/fluttershub/homepage:x64-latest
     restart: always
     networks:
       - external

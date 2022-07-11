@@ -18,7 +18,6 @@
         mode: '0755'
       loop:
         - docker-compose.yml
-      register: compose
 
     - name: deploy Docker Compose stack if updated
       community.docker.docker_compose:
@@ -26,4 +25,3 @@
         pull: true
         files:
           - docker-compose.yml
-      when: compose.changed

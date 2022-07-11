@@ -60,6 +60,9 @@ body,html, .container {
     -moz-user-select: text;
     text-decoration: none;
 }
+.cookie {
+   text-decoration: none !important;
+}
 
 .no_hightnight a:link, a{
     color: inherit;

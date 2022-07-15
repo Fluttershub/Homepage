@@ -2,6 +2,8 @@ FROM node:18.6-alpine AS base
 LABEL version="4.1.0"
 LABEL description=""
 
+RUN RUN apk --update --no-cache upgrade
+
 WORKDIR /usr/src/app
 COPY ["package.json", "./"]
 COPY ["yarn.lock", "./"]

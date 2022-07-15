@@ -14,6 +14,9 @@ COPY ["src/", "./src"]
 RUN npm run Prod
 
 FROM nginx:1.23.0-alpine as Web
+
+RUN apk --update --no-cache upgrade
+
 LABEL maintainer="Phoenix (https://github.com/HotaruBlaze)"
 COPY docker/nginx.conf /etc/nginx/nginx.conf
 COPY docker/web.conf /etc/nginx/conf.d/web.conf

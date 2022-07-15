@@ -1,8 +1,9 @@
-FROM node:18.6-alpine AS base
+FROM node:18.6 AS base
 LABEL version="4.1.0"
 LABEL description=""
 
-RUN apk --update --no-cache upgrade && apk add g++ make python --no-cache
+RUN apt-get update && apt-get upgrade -y \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app
 COPY ["package.json", "./"]

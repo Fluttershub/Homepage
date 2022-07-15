@@ -1,6 +1,8 @@
-FROM node:18.5.0 AS base
+FROM node:18.6-alpine AS base
 LABEL version="4.1.0"
 LABEL description=""
+
+RUN apk --update --no-cache upgrade
 
 WORKDIR /usr/src/app
 COPY ["package.json", "./"]
@@ -12,6 +14,9 @@ COPY ["src/", "./src"]
 RUN npm run Prod
 
 FROM nginx:1.23.0-alpine as Web
+
+RUN apk --update --no-cache upgrade
+
 LABEL maintainer="Phoenix (https://github.com/HotaruBlaze)"
 COPY docker/nginx.conf /etc/nginx/nginx.conf
 COPY docker/web.conf /etc/nginx/conf.d/web.conf

@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@parcel/transformer-pug": "2.6.2",
-    "@parcel/transformer-sass": "2.6.2",
+    "@parcel/transformer-sass": "2.7.0",
     "parcel": "^2.6.2"
   },
   "resolutions": {

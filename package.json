@@ -17,9 +17,9 @@
     "Prod": "npm run Cleanup && npm run Init && parcel build src/index.pug --dist-dir build"
   },
   "devDependencies": {
-    "@parcel/transformer-pug": "2.6.2",
-    "@parcel/transformer-sass": "2.6.2",
-    "parcel": "^2.6.2"
+    "@parcel/transformer-pug": "2.7.0",
+    "@parcel/transformer-sass": "2.7.0",
+    "parcel": "^2.7.0"
   },
   "resolutions": {
     "node-forge": "0.10.0"

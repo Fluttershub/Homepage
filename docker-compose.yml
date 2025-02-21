@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  fluttershub.com:
+  fluttershub-homepage:
     image: ghcr.io/fluttershub/homepage:x64-latest
     restart: always
     networks:

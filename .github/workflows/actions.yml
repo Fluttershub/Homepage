@@ -33,7 +33,7 @@ jobs:
 
       - name: Build Docker Image
         id: docker_build_x64
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v6
         with:
           push: true
           platforms: linux/amd64
@@ -62,7 +62,7 @@ jobs:
 
       - name: Build Docker Image
         id: docker_build_arm64
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v6
         with:
           push: true
           platforms: linux/arm64

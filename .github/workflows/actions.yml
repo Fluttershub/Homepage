@@ -18,7 +18,7 @@ jobs:
     env:
       DOCKER_CONFIG: $HOME/.docker
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Set up Docker Buildx
         id: buildx
@@ -47,7 +47,7 @@ jobs:
     env:
       DOCKER_CONFIG: $HOME/.docker
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Set up Docker Buildx
         id: buildx
@@ -74,7 +74,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: Build_x86
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Run Ansible playbook
         # uses: dawidd6/action-ansible-playbook@v2.5.0
         uses: dawidd6/action-ansible-playbook@671974ed60e946e11964cb0c26e69caaa4b1f559

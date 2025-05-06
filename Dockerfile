@@ -1,4 +1,4 @@
-FROM node:18.20.7 AS base
+FROM node:18.20.8 AS base
 LABEL version="4.1.0"
 LABEL description=""
 

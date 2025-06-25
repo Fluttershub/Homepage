@@ -14,7 +14,7 @@ RUN yarn install
 COPY ["src/", "./src"]
 RUN npm run Prod
 
-FROM nginx:1.27.4-alpine as Web
+FROM nginx:1.29.0-alpine as Web
 
 RUN apk --update --no-cache upgrade
 

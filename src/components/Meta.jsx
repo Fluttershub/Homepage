@@ -2,6 +2,7 @@ export default function Meta({ title, description, image, url = "https://flutter
   return (
     <>
       <title>{title}</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
       <meta property="og:url" content={url} />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />

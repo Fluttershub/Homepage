@@ -6,7 +6,20 @@ body {
 
 html, body, #root {
     height: 100%;
+    margin: 0;      /* Remove default margin */
+    padding: 0;     /* Remove default padding */
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    justify-content: center; /* center horizontally if needed */
+    align-items: center;     /* center vertically if needed */
+    min-height: 100vh;       /* ensure minimum full viewport height */
+}
+
 
 @keyframes glowMove {
     0% { background-position: 0% 0%; }
@@ -24,9 +37,9 @@ html, body, #root {
     position: relative;
 }
 
-.profile-pic::after {
-    content: '';
-    position: absolute;
-    height: 100px;
+// .profile-pic::after {
+//     content: '';
+//     position: absolute;
+//     height: 100px;
 
-}
+// }

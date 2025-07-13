@@ -19,7 +19,7 @@ export default function ButtonGrid() {
   }, []);
 
   return (
-    <div className="btn-row max-w-md mx-auto mt-8 flex justify-center gap-4">
+    <div className="btn-row max-w-md mx-auto mt-8 flex flex-wrap justify-center gap-4">
       {buttons.map((btn, i) => (
         <button
           key={i}

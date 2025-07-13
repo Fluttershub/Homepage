@@ -1,22 +1,37 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import CenteredImage from "../components/CenteredImage.jsx";
+import ButtonGrid from "../components/ButtonGrid.jsx";
+import TypewriterLoader from "../components/TypewriterLoader.jsx";
+import Greeting from "../components/Greeting.jsx";
+import ConsoleArt from '../components/Console.jsx';
+---
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+<html lang="en" class="h-full bg-gray-900 text-white">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Landing Page</title>
+  </head>
+  <body
+    class="relative h-full min-h-screen overflow-hidden flex items-center justify-center"
+  >
+    <ConsoleArt client:idle/>
+    <main
+      class="relative z-10 flex flex-col items-center justify-center w-full max-w-5xl px-6 py-16"
+    >
+      <CenteredImage
+        frontSrc="/profile_pic.jpg"
+        backSrc="/profile_pic2.webp"
+        alt="Profile Pic"
+        client:load
+      />
+      <Greeting
+        textRef={"greetingRef"}
+        displayed="Phoenix/HotaruBlaze"
+        client:load
+      />
+      <TypewriterLoader client:load />
+      <ButtonGrid client:load />
+    </main>
+  </body>
+</html>

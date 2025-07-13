@@ -1,0 +1,8 @@
+node_modules
+dist
+.cache
+output
+.vscode
+.env
+*.log
+.vscode

@@ -1,0 +1,32 @@
+// Give me a dark gray background color for the main content area
+body {
+    background-color: #121212; // Dark gray background
+    color: #ffffff; // White text for contrast
+}
+
+html, body, #root {
+    height: 100%;
+}
+
+@keyframes glowMove {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+
+.profile-pic {
+    margin: 0 auto;
+    padding: 2em;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    position: relative;
+}
+
+.profile-pic::after {
+    content: '';
+    position: absolute;
+    height: 100px;
+
+}

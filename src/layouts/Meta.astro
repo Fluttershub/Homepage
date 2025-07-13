@@ -1,0 +1,55 @@
+---
+const images = [
+  "/meta/img1.png",
+  "/meta/img2.png",
+  "/meta/img3.png",
+  "/meta/img4.png",
+  "/meta/img5.png",
+  "/meta/img6.png",
+];
+
+const titles = [
+  "Phoenix's Hacker Den",
+  "404: Privacy Not Found",
+  "Uplink: British Edition",
+  "The Cookie Exploiter Zone",
+  "Gacha Addiction Headquarters",
+  "Kasane Teto Left Her VPN On",
+  "Sniffing Your WiFi Packets...",
+  "Miku's Secret LAN Party",
+  "Debugging Your Fridge...",
+  "Terminal Overlord Vibes",
+];
+
+const descriptions = [
+  "We got cookies, milk, and highly suspicious scripts 👀",
+  "Accessing your fridge in dark mode... 🍪",
+  "Decrypting your browser history for maximum dopamine.",
+  "Injecting pizza delivery payloads into your router.",
+  "I swear I'm just rolling *one* more gacha pull...",
+  "Kasane Teto left some suspicious .exe files here.",
+  "Miku is streaming your WiFi logs to the moon 🌕",
+  "Currently hacking your WiFi. Buffering... 🔥",
+  "Just an idiot building pity, nothing else.",
+  "Installing vocaloid drivers on your toaster...",
+];
+
+const image = images[Math.floor(Math.random() * images.length)];
+const title = titles[Math.floor(Math.random() * titles.length)];
+const description = descriptions[Math.floor(Math.random() * descriptions.length)];
+---
+
+<title>{title}</title>
+<meta property="og:url" content="https://fluttershub.com" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image} />
+<meta property="og:image:secure_url" content={image} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />
+
+<meta name="theme-color" content="#b00b69" />

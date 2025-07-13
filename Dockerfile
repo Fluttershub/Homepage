@@ -23,4 +23,4 @@ RUN bun run build
 EXPOSE 4321
 
 # Start the SSR server
-CMD ["bun", "run", "preview","--host"]
+CMD ["bun", "run", "start"]

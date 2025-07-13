@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  fluttershub-homepage:
+    image: ghcr.io/fluttershub/homepage:latest
+    restart: always
+    networks:
+      - external
+    container_name: fluttershub.com
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.fluttershub-com.tls=true"
+      - "traefik.http.routers.fluttershub-com.rule=Host(`fluttershub.com`)"
+      - "traefik.http.routers.fluttershub-com.tls.certresolver=letsencrypt"
+networks:
+  external:
+    external: true
